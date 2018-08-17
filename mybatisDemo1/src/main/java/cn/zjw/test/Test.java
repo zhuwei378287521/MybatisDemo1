@@ -2,6 +2,7 @@ package cn.zjw.test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.exceptions.TooManyResultsException;
 import org.apache.ibatis.io.Resources;
@@ -65,6 +66,12 @@ public class Test {
 				System.out.println("没有找到结果");
 			}
 			
+			
+			//为了解决上面的问题，使用selectlist解决
+			List<User> list = sqlSession.selectList("cn.zjw.po.User.findUserByUsername","zjw") ;
+			for (User user : list) {
+				System.out.println(user.getUsername()+" id= "+user.getId());
+			}
 		}
 
 		
