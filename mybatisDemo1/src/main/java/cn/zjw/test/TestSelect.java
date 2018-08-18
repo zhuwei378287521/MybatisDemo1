@@ -12,7 +12,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import cn.zjw.po.User;
 
-public class Test {
+public class TestSelect {
 	//会话工厂
 		private SqlSessionFactory sqlSessionFactory;
 		public void createSqlSessionFactory() throws IOException {
@@ -76,7 +76,7 @@ public class Test {
 
 		
 		public static void main(String[] args) {
-			Test test = new Test();
+			TestSelect test = new TestSelect();
 			try {
 				test.createSqlSessionFactory();
 				test.testFindUserById();
